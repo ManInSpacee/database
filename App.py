@@ -4,15 +4,12 @@ import psycopg2
 from psycopg2 import errors
 import logging
 
-# ========================
-# LOG: Настройка логирования
-# ========================
 logging.basicConfig(
-    filename='app.log',  # имя файла лога
-    level=logging.INFO,  # уровень логирования по умолчанию
+    filename='app.log',
+    level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S',
-    encoding='utf-8'  # LOG: чтобы кириллица корректно писалась
+    encoding='utf-8'
 )
 
 
@@ -20,7 +17,7 @@ def get_connection():
     return psycopg2.connect(
         dbname="postgres",
         user="postgres",
-        password="klim",
+        password="Tyur1234",
         host="localhost",
         port="5432"
     )
@@ -142,9 +139,6 @@ def open_modal():
     btn_insert = QtWidgets.QPushButton("Внести", dialog)
     btn_insert.setGeometry(150, 380, 100, 30)
 
-    # ========================
-    # LOG: Добавление обработчика кнопки с логированием
-    # ========================
     def insert_record():
         conn = None
         cursor = None
@@ -190,12 +184,19 @@ def open_modal():
             conn.commit()
             cursor.close()
             conn.close()
+
             QtWidgets.QMessageBox.information(dialog, "Успех", "Запись добавлена!")
             logging.info(f"Record inserted: attack_type={attack_type}, target_ip={target_ip}")  # LOG: успешная вставка
             dialog.accept()
         except errors.CheckViolation:
-            QtWidgets.QMessageBox.warning(dialog, "Ошибка", "Некорректное значение для поля!")
+            QtWidgets.QMessageBox.warning(dialog, "Ошибка", "В одном из полей введено отрицательное значение!")
             logging.warning("Check constraint violation during insert")  # LOG/DB ERROR
+        except errors.InvalidTextRepresentation:
+            QtWidgets.QMessageBox.warning(
+                dialog,
+                "Ой, сладенький 💖",
+                "Такого значения в ENUM нет... ну ты хоть иногда читай, что вводишь 😘")
+            logging.error(f"Invalid ENUM value entered: attack_type='{attack_type}'")
         except Exception as e:
             if conn is not None:
                 try:
@@ -209,10 +210,6 @@ def open_modal():
     btn_insert.clicked.connect(insert_record)
     dialog.exec_()
 
-
-# ========================
-# LOG: show_table_window можно добавить INFO
-# ========================
 def show_table_window():
     table_dialog = QtWidgets.QWidget()
     table_dialog.setWindowTitle("Таблица пользователей")
@@ -252,10 +249,6 @@ def show_table_window():
     table_dialog.show()
     window.table_dialog_window = table_dialog
 
-
-# ========================
-# Основное окно
-# ========================
 app = QtWidgets.QApplication(sys.argv)
 window = uic.loadUi("ui/main.ui")
 window.setWindowTitle("PostgreSQL + Qt5")
