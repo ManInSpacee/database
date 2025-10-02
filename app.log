@@ -1,318 +1,87 @@
-2025-09-30 17:03:33 [WARNING] Insert attempt with empty required fields
-2025-10-01 17:13:00 [INFO] Table initialized!
-2025-10-01 17:13:09 [WARNING] Insert attempt with empty required fields
-2025-10-01 17:13:44 [ERROR] Insert failed: invalid input value for enum attack_enum: "syn_fl"
-LINE 3:                            VALUES ('syn_fl') ON CONFLICT (na...
-                                           ^
+2025-10-02 13:23:34 [ERROR] Table not initialized! 'utf-8' codec can't decode byte 0xc2 in position 61: invalid continuation byte
 Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.InvalidTextRepresentation: invalid input value for enum attack_enum: "syn_fl"
-LINE 3:                            VALUES ('syn_fl') ON CONFLICT (na...
-                                           ^
-
-2025-10-01 17:13:49 [INFO] Record inserted: attack_type=syn_flood, target_ip=1.1.1.1
-2025-10-01 17:13:49 [INFO] Table loaded with filter=''
-2025-10-01 17:14:18 [INFO] Table loaded with filter=''
-2025-10-01 17:15:01 [INFO] Table loaded with filter=''
-2025-10-01 17:15:35 [INFO] Table loaded with filter=''
-2025-10-01 17:19:34 [ERROR] Insert failed: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
+  File "C:\Users\ManInSpace\PycharmProjects\PythonProject\App.py", line 29, in create_schema_and_tables
+    conn = get_connection()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ManInSpace\PycharmProjects\PythonProject\App.py", line 18, in get_connection
+    return psycopg2.connect(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ManInSpace\PycharmProjects\PythonProject\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc2 in position 61: invalid continuation byte
+2025-10-02 13:25:16 [INFO] The table is already initialized!
+2025-10-02 13:25:18 [INFO] Table loaded with filter=''
+2025-10-02 13:25:52 [WARNING] Insert attempt with empty required fields
+2025-10-02 13:26:06 [ERROR] Invalid ENUM value entered: attack_type='купкп'
+2025-10-02 13:28:52 [INFO] The table is already initialized!
+2025-10-02 13:31:01 [ERROR] Insert failed: name 'attack_type_edit' is not defined
 Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-
-2025-10-01 17:19:41 [ERROR] Insert failed: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
+  File "C:\Users\ManInSpace\PycharmProjects\PythonProject\App.py", line 152, in insert_record
+    attack_type = attack_type_edit.text().strip()
+                  ^^^^^^^^^^^^^^^^
+NameError: name 'attack_type_edit' is not defined
+2025-10-02 13:31:03 [ERROR] Insert failed: name 'attack_type_edit' is not defined
 Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-
-2025-10-01 17:19:59 [ERROR] Insert failed: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
+  File "C:\Users\ManInSpace\PycharmProjects\PythonProject\App.py", line 152, in insert_record
+    attack_type = attack_type_edit.text().strip()
+                  ^^^^^^^^^^^^^^^^
+NameError: name 'attack_type_edit' is not defined
+2025-10-02 13:31:55 [ERROR] Insert failed: 'QComboBox' object has no attribute 'text'
 Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-
-2025-10-01 17:20:50 [ERROR] Insert failed: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-
-2025-10-01 17:21:03 [ERROR] Insert failed: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-
-2025-10-01 17:21:14 [ERROR] Insert failed: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-
-2025-10-01 17:21:22 [ERROR] Insert failed: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedColumn: column "name" of relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                                            ^
-
-2025-10-01 17:22:15 [INFO] Table initialized!
-2025-10-01 17:22:27 [INFO] Record inserted: attack_type=syn_flood, target_ip=1.1.1.1
-2025-10-01 17:29:06 [WARNING] Insert attempt with empty required fields
-2025-10-01 17:29:12 [WARNING] Insert attempt with empty required fields
-2025-10-01 17:32:13 [ERROR] Insert failed: invalid input value for enum attack_enum: "syn_flood"
-LINE 3:                            VALUES ('syn_flood') ON CONFLICT ...
-                                           ^
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.InvalidTextRepresentation: invalid input value for enum attack_enum: "syn_flood"
-LINE 3:                            VALUES ('syn_flood') ON CONFLICT ...
-                                           ^
-
-2025-10-01 17:32:16 [ERROR] Insert failed: relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                               ^
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 180, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO attack_name (name)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   VALUES (%s) ON CONFLICT (name) DO NOTHING
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                   """, (attack_type,))
-                   ^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.UndefinedTable: relation "attack_name" does not exist
-LINE 2:                            INSERT INTO attack_name (name)
-                                               ^
-
-2025-10-01 17:32:31 [INFO] Table initialized!
-2025-10-01 17:32:52 [WARNING] Check constraint violation during insert
-2025-10-01 18:11:35 [INFO] Table loaded with filter=''
-2025-10-01 18:23:54 [WARNING] Insert attempt with empty required fields
-2025-10-01 18:25:31 [ERROR] Invalid ENUM value entered: attack_type='фыв'
-2025-10-01 18:25:54 [ERROR] Insert failed: null value in column "id" of relation "users" violates not-null constraint
-DETAIL:  Failing row contains (null, syn_flood, 1.1.1.1, 2000-01-01 00:00:00, 123, 123, 123, t, {фвфы}).
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 178, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO users (attack_type, target_ip, start_time, duration_sec,
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<2 lines>...
-                   """, (attack_type, target_ip, start_time, duration_sec, peak_dbs,
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                         source_count, is_detected, [source_country] if source_country else None))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.NotNullViolation: null value in column "id" of relation "users" violates not-null constraint
-DETAIL:  Failing row contains (null, syn_flood, 1.1.1.1, 2000-01-01 00:00:00, 123, 123, 123, t, {фвфы}).
-
-2025-10-01 18:26:00 [ERROR] Insert failed: null value in column "id" of relation "users" violates not-null constraint
-DETAIL:  Failing row contains (null, syn_flood, 1.1.1.1, 2000-01-01 00:00:00, 123, 123, 123, t, {фвфы}).
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 178, in insert_record
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-                   INSERT INTO users (attack_type, target_ip, start_time, duration_sec,
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<2 lines>...
-                   """, (attack_type, target_ip, start_time, duration_sec, peak_dbs,
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                         source_count, is_detected, [source_country] if source_country else None))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.errors.NotNullViolation: null value in column "id" of relation "users" violates not-null constraint
-DETAIL:  Failing row contains (null, syn_flood, 1.1.1.1, 2000-01-01 00:00:00, 123, 123, 123, t, {фвфы}).
-
-2025-10-01 18:26:18 [ERROR] Table not initialized! no schema has been selected to create in
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 30, in create_schema_and_tables
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-        CREATE TYPE attack_enum AS ENUM (
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<28 lines>...
-        );
-        ^^
-    """)
-    ^^^^
-psycopg2.errors.InvalidSchemaName: no schema has been selected to create in
-
-2025-10-01 18:26:20 [ERROR] Table not initialized! no schema has been selected to create in
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 30, in create_schema_and_tables
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-        CREATE TYPE attack_enum AS ENUM (
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<28 lines>...
-        );
-        ^^
-    """)
-    ^^^^
-psycopg2.errors.InvalidSchemaName: no schema has been selected to create in
-
-2025-10-01 18:26:27 [ERROR] Table not initialized! no schema has been selected to create in
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 30, in create_schema_and_tables
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-        CREATE TYPE attack_enum AS ENUM (
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<28 lines>...
-        );
-        ^^
-    """)
-    ^^^^
-psycopg2.errors.InvalidSchemaName: no schema has been selected to create in
-
-2025-10-01 18:26:37 [ERROR] Table not initialized! no schema has been selected to create in
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 30, in create_schema_and_tables
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-        CREATE TYPE attack_enum AS ENUM (
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<28 lines>...
-        );
-        ^^
-    """)
-    ^^^^
-psycopg2.errors.InvalidSchemaName: no schema has been selected to create in
-
-2025-10-01 18:28:13 [ERROR] Table not initialized! no schema has been selected to create in
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 30, in create_schema_and_tables
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-        CREATE TYPE attack_enum AS ENUM (
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<28 lines>...
-        );
-        ^^
-    """)
-    ^^^^
-psycopg2.errors.InvalidSchemaName: no schema has been selected to create in
-
-2025-10-01 18:29:43 [ERROR] Table not initialized! no schema has been selected to create in
-Traceback (most recent call last):
-  File "C:\Users\pale_avenger\PycharmProjects\database\App.py", line 30, in create_schema_and_tables
-    cursor.execute("""
-    ~~~~~~~~~~~~~~^^^^
-        CREATE TYPE attack_enum AS ENUM (
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<28 lines>...
-        );
-        ^^
-    """)
-    ^^^^
-psycopg2.errors.InvalidSchemaName: no schema has been selected to create in
-
-2025-10-01 18:29:44 [INFO] Table initialized!
-2025-10-01 18:30:00 [INFO] Record inserted: attack_type=syn_flood, target_ip=1.1.1.1
-2025-10-01 18:30:01 [INFO] Table loaded with filter=''
-2025-10-01 18:30:16 [INFO] Record inserted: attack_type=udp_flood, target_ip=1.1.1.1
-2025-10-01 18:30:18 [INFO] Table loaded with filter=''
-2025-10-01 18:30:21 [INFO] Table loaded with filter='u'
-2025-10-01 18:30:21 [INFO] Table loaded with filter='up'
-2025-10-01 18:30:21 [INFO] Table loaded with filter='upd'
-2025-10-01 18:30:22 [INFO] Table loaded with filter='up'
-2025-10-01 18:30:22 [INFO] Table loaded with filter='u'
-2025-10-01 18:30:23 [INFO] Table loaded with filter='ud'
-2025-10-01 18:30:23 [INFO] Table loaded with filter='udp'
-2025-10-01 18:30:24 [INFO] Table loaded with filter='ud'
-2025-10-01 18:30:24 [INFO] Table loaded with filter='u'
-2025-10-01 18:30:24 [INFO] Table loaded with filter=''
+  File "C:\Users\ManInSpace\PycharmProjects\PythonProject\App.py", line 152, in insert_record
+    attack_type = attack_type_combo.text().strip()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QComboBox' object has no attribute 'text'
+2025-10-02 13:32:09 [INFO] The table is already initialized!
+2025-10-02 13:32:17 [INFO] Record inserted: attack_type=syn_flood, target_ip=1.1..11
+2025-10-02 13:32:19 [INFO] Table loaded with filter=''
+2025-10-02 13:32:23 [INFO] The table is already initialized!
+2025-10-02 13:37:45 [INFO] Record inserted: attack_type=syn_flood, target_ip=1.1.1.1
+2025-10-02 13:37:47 [INFO] Table loaded with filter=''
+2025-10-02 13:38:02 [INFO] Table loaded with filter=''
+2025-10-02 13:38:13 [INFO] Record inserted: attack_type=syn_flood, target_ip=1.1.1.1
+2025-10-02 13:38:14 [INFO] Table loaded with filter=''
+2025-10-02 13:40:56 [INFO] The table is already initialized!
+2025-10-02 13:41:22 [INFO] Record inserted: attack_type=syn_flood, target_ip=1.1.1.1
+2025-10-02 13:41:23 [INFO] Table loaded with filter=''
+2025-10-02 13:41:33 [INFO] Table loaded with filter='r'
+2025-10-02 13:41:33 [INFO] Table loaded with filter='ru'
+2025-10-02 13:41:34 [INFO] Table loaded with filter='rus'
+2025-10-02 13:41:34 [INFO] Table loaded with filter='russ'
+2025-10-02 13:41:34 [INFO] Table loaded with filter='rus'
+2025-10-02 13:41:35 [INFO] Table loaded with filter='ru'
+2025-10-02 13:41:35 [INFO] Table loaded with filter='r'
+2025-10-02 13:41:35 [INFO] Table loaded with filter=''
+2025-10-02 13:41:36 [INFO] Table loaded with filter='s'
+2025-10-02 13:41:36 [INFO] Table loaded with filter='sy'
+2025-10-02 13:41:37 [INFO] Table loaded with filter='syn'
+2025-10-02 13:41:38 [INFO] Table loaded with filter='syn0'
+2025-10-02 13:41:38 [INFO] Table loaded with filter='syn'
+2025-10-02 13:41:38 [INFO] Table loaded with filter='syn)'
+2025-10-02 13:41:39 [INFO] Table loaded with filter='syn)f'
+2025-10-02 13:41:39 [INFO] Table loaded with filter='syn)'
+2025-10-02 13:41:39 [INFO] Table loaded with filter='syn'
+2025-10-02 13:41:40 [INFO] Table loaded with filter='syn_'
+2025-10-02 13:41:41 [INFO] Table loaded with filter='syn_f'
+2025-10-02 13:41:41 [INFO] Table loaded with filter='syn_fl'
+2025-10-02 13:41:41 [INFO] Table loaded with filter='syn_flo'
+2025-10-02 13:41:41 [INFO] Table loaded with filter='syn_floo'
+2025-10-02 13:41:55 [INFO] Record inserted: attack_type=dns_amplification, target_ip=111.112.121.121
+2025-10-02 13:41:57 [INFO] Table loaded with filter=''
+2025-10-02 13:42:01 [INFO] Table loaded with filter='d'
+2025-10-02 13:42:01 [INFO] Table loaded with filter='dn'
+2025-10-02 13:43:43 [INFO] Record inserted: attack_type=syn_flood, target_ip=1.1.1.1
+2025-10-02 13:43:47 [WARNING] Insert attempt with empty required fields
+2025-10-02 13:43:51 [INFO] Record inserted: attack_type=syn_flood, target_ip=1
+2025-10-02 13:43:55 [INFO] Table loaded with filter=''
+2025-10-02 13:45:15 [WARNING] Insert attempt with empty required fields
+2025-10-02 13:52:36 [INFO] The table is already initialized!
+2025-10-02 13:54:19 [INFO] Table loaded with filter=''
+2025-10-02 13:55:16 [INFO] Table initialized!
+2025-10-02 13:55:17 [INFO] Table loaded with filter=''
+2025-10-02 13:55:30 [INFO] Record inserted: attack_type=syn_flood, target_ip=112.121.21.212
+2025-10-02 13:55:31 [INFO] Table loaded with filter=''
+2025-10-02 13:56:46 [INFO] The table is already initialized!
+2025-10-02 13:57:09 [INFO] Record inserted: attack_type=syn_flood, target_ip=121.12.12.121
+2025-10-02 13:57:12 [INFO] Table loaded with filter=''
