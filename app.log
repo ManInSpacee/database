@@ -85,3 +85,6 @@ AttributeError: 'QComboBox' object has no attribute 'text'
 2025-10-02 13:56:46 [INFO] The table is already initialized!
 2025-10-02 13:57:09 [INFO] Record inserted: attack_type=syn_flood, target_ip=121.12.12.121
 2025-10-02 13:57:12 [INFO] Table loaded with filter=''
+2025-10-02 14:05:17 [INFO] The table is already initialized!
+2025-10-02 14:05:45 [INFO] Record inserted: attack_type=smurf, target_ip=121
+2025-10-02 14:05:46 [INFO] Table loaded with filter=''

@@ -23,7 +23,7 @@ def get_connection():
         port="5432"
     )
 
-# Создание таблицы с основными типами данных
+# Создание таблиц
 def create_schema_and_tables(window):
     try:
         conn = get_connection()
