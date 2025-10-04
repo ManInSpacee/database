@@ -88,3 +88,25 @@ AttributeError: 'QComboBox' object has no attribute 'text'
 2025-10-02 14:05:17 [INFO] The table is already initialized!
 2025-10-02 14:05:45 [INFO] Record inserted: attack_type=smurf, target_ip=121
 2025-10-02 14:05:46 [INFO] Table loaded with filter=''
+2025-10-04 16:52:04 [ERROR] Table not initialized! connection to server at "localhost" (::1), port 5432 failed: Permission denied (0x0000271D/10013)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+Traceback (most recent call last):
+  File "C:\Users\pale_avenger\PycharmProjects\database\src\db.py", line 29, in create_schema_and_tables
+    conn = get_connection()
+  File "C:\Users\pale_avenger\PycharmProjects\database\src\db.py", line 18, in get_connection
+    return psycopg2.connect(
+           ~~~~~~~~~~~~~~~~^
+        dbname="postgres",
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        port="5432"
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pale_avenger\PycharmProjects\database\.venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Permission denied (0x0000271D/10013)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
